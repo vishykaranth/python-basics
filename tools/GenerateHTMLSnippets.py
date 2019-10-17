@@ -1,0 +1,21 @@
+import csv
+with open('blog.csv', 'r') as csvFile:
+    reader = csv.reader(csvFile)
+    for row in reader:
+        print(row)
+        print("<tr>")
+        print("<td>")
+        print("<div class=\"materials-wrap\">")
+        print("<div class=\"module-header\">"+ row[0] +"</div>")
+        print("<div class=\"materials-item\">")
+        print("<a href=\"" + row[1] + "/\">")
+        print(row[2])
+        print("</a>")
+        print("<a href=\"" + row[3] + "/\">")
+        print(row[4])
+        print("</a>")
+        print("</div>")
+        print("</div>")
+        print("</td>")
+        print("</tr>")
+csvFile.close()
