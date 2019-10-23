@@ -141,7 +141,7 @@
 - To implement a BFS algorithm, we use the queue data structure to help.
 - ![](imgs/BFS.jpeg) 
 - So we traverse level by level. In this example, the result is 1–2–5–3–4–6–7.
-- Level/Depth 0: only node with value 1
+- Level/Depth 0: only node with value 1.
 - Level/Depth 1: nodes with values 2 and 5
 - Level/Depth 2: nodes with values 3, 4, 6, and 7
     ~~~python
