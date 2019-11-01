@@ -178,9 +178,9 @@ class Point(Struct):
 
 p = Point('\x01\x00\x02\x00')
 
-print p.x, p.y  # Prints 1,2
+print(p.x, p.y)  # Prints 1,2
 p.x, p.y = 100, 200
-print repr(p)  # Prints "Point('d\x00\xc8\x00')
+print(repr(p))  # Prints "Point('d\x00\xc8\x00')
 
 assert (struct.pack('<hh', 100, 200) == str(p))
 
@@ -204,7 +204,7 @@ s = Shape('Triangle\x00\x00\x00\x03\x00\x00\x00\x00\x05\x00\x05\x00\n\x00'
           '\x00\x00\x00\x00\x00\x00')
 
 # This will print "Triangle [(0,0), (5,5), (10,0)]"
-print s.name, [(p.x, p.y) for p in s.points[:s.numpoints]]
+print(s.name, [(p.x, p.y) for p in s.points[:s.numpoints]])
 
 # The same structure could be created as:
 s2 = Shape(name='Triangle', numpoints=3, points=[
@@ -235,11 +235,11 @@ class TicTacToe(Struct):
     ignored = 'This is not packed / unpacked by the structure'
 
     def display(self):
-        print '\n'.join(''.join(row) for row in self.board)
+        print('\n'.join(''.join(row) for row in self.board))
 
 
 game = TicTacToe('X.O.X...O')
-print game.board  # [['X', '.', 'O'], ['.', 'X', '.'], ['.', '.', 'O']]
+print(game.board)  # [['X', '.', 'O'], ['.', 'X', '.'], ['.', '.', 'O']]
 
 game.display()
 # Prints: X.O
@@ -251,7 +251,7 @@ game.display()
 # Prints: XXO
 #         .X.
 #         ..O
-print str(game)  # prints 'XXO.X...O'
+print(str(game))  # prints 'XXO.X...O'
 
 
 ###################################################################
@@ -269,4 +269,4 @@ class Point3D(Point):
 
 p = Point3D(x=1, y=2, z=3)
 
-print repr(p)  # prints Point3D('\x01\x00\x02\x00\x03\x00')
+print(repr(p))  # prints Point3D('\x01\x00\x02\x00\x03\x00')
